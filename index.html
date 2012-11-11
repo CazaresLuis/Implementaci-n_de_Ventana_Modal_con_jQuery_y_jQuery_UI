@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+ 
+<html lang="es">
+ 
+<head>
+<title>:: Ventana Modal con jQuery y jQuery UI ::</title>
+<meta charset="utf-8" />
+<link type="text/css" href="css/smoothness/jquery-ui-1.8.23.custom.css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.23.custom.min.js"></script>
+		
+
+</head>
+<script type="text/javascript">
+	$(function(){
+		// Creamos los botones
+		$('#botonera button').button();
+
+		// Centramos los botones
+		$('#botonera, footer').css({
+			'text-align':'center',
+			'padding': 10
+		});
+
+		$('#dialogAuto').dialog();
+
+		$('#dialogAnimada').dialog({
+			autoOpen:false,
+			show:'bounce',
+			hide:'blind'
+		});
+
+		$('#btnAnimado').on('click',function(){
+			$('#dialogAnimada').dialog('open');
+			return false;
+		});
+
+		$('#dialogPersonalizada').dialog({
+			autoOpen:false
+		});
+
+		$('#btnPersonalizado').on('click',function(){
+			$('#dialogPersonalizada').dialog({
+				title: 'Ventana de Diálogo Personalizada con parámetros',
+				autoOpen: true,
+				width:500,
+				height:250,
+				draggable: true,
+				resizable: true,
+				position: [200,300]
+			});
+		});
+
+		// Ventana Modal
+		$("#dialogModal" ).dialog({
+				autoOpen: false,
+				modal:true
+		});
+
+		$('#btnModal').on('click',function(){
+			$("#dialogModal" ).dialog('open');
+			return false;
+		});
+
+		// Ventana No Modal
+		$("#dialogNoModal" ).dialog({
+				autoOpen: false,
+				modal:false
+		});
+
+		$('#btnNoModal').on('click',function(){
+			$("#dialogNoModal" ).dialog('open');
+			return false;
+		});
+		
+	});
+</script>
+<body>
+		<div id="wraper">
+			<div id="dialogAuto" title="Ventana de Diálogo Auto Cargable">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in purus orci. Ut accumsan turpis quis lorem tincidunt vel fringilla tortor congue. Aliquam hendrerit, odio ut sollicitudin tempor, nibh lacus.</p>
+			</div>
+			<div id="dialogAnimada" title="Ventana de Diálogo Animada">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in purus orci. Ut accumsan turpis quis lorem tincidunt vel fringilla tortor congue. Aliquam hendrerit, odio ut sollicitudin tempor, nibh lacus.</p>
+			</div>
+			<div id="dialogPersonalizada" title="">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in purus orci. Ut accumsan turpis quis lorem tincidunt vel fringilla tortor congue. Aliquam hendrerit, odio ut sollicitudin tempor, nibh lacus.</p>
+			</div>
+			<div id="dialogNoModal" title="Ventana de Diálogo No Modal">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in purus orci. Ut accumsan turpis quis lorem tincidunt vel fringilla tortor congue. Aliquam hendrerit, odio ut sollicitudin tempor, nibh lacus.</p>
+			</div>
+			<div id="dialogModal" title="Ventana de Diálogo Modal">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in purus orci. Ut accumsan turpis quis lorem tincidunt vel fringilla tortor congue. Aliquam hendrerit, odio ut sollicitudin tempor, nibh lacus.</p>
+			</div>
+
+		    <header>
+		    	
+		    </header>
+
+		    <section id="botonera">
+		    	<button id="btnAnimado">Ventana Animada</button>
+		    	<button id="btnPersonalizado">Ventana Personalizada</button>
+		    	<button id="btnModal">Ventana Modal</button>
+		    	<button id="btnNoModal">Ventana No Modal</button>
+		    </section>
+
+ 		</div>
+  		<footer>
+	        Powered by Luis Fernando Cázares Bulbarela || 2012
+		</footer>
+</body>
+</html>
+
+
